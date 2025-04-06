@@ -1,0 +1,188 @@
+/* ========== GLOBAL RESET & BASE ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f4f7fa;
+  color: #2b2b2b;
+  line-height: 1.6;
+}
+
+/* ========== CONTAINER ========== */
+.container {
+  max-width: 1200px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* ========== HEADINGS ========== */
+h1 {
+  text-align: center;
+  font-size: 2.2rem;
+  color: #1e3a8a;
+  margin-bottom: 2rem;
+}
+
+/* ========== FORM ELEMENTS ========== */
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #374151;
+}
+
+input[type="file"],
+input[type="text"] {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  background-color: #f9fafb;
+  margin-bottom: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+input[type="file"]:hover,
+input[type="text"]:hover {
+  border-color: #2563eb;
+}
+
+/* ========== BUTTON ========== */
+button {
+  padding: 0.75rem 1.5rem;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  margin-top: 0.5rem;
+}
+
+button:hover {
+  background-color: #1e40af;
+  transform: translateY(-2px);
+}
+
+/* ========== SEARCH AND SORT ========== */
+#search-container {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin: 1.5rem 0;
+}
+
+#sort-controls {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+#sort-controls button {
+  background-color: #e0e7ff;
+  color: #1e40af;
+}
+
+#sort-controls button:hover {
+  background-color: #c7d2fe;
+}
+
+/* ========== RESULTS SECTION ========== */
+.result-card {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+.resume-card {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease;
+}
+
+.resume-card:hover {
+  transform: translateY(-4px);
+}
+
+.resume-card h3 {
+  color: #1f2937;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.resume-card .ats-score {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #059669;
+  margin-bottom: 1rem;
+}
+
+.resume-card .ats-score.low {
+  color: #dc2626;
+}
+
+/* ========== LIST OF FIELDS ========== */
+.resume-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.resume-card ul li {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  border-bottom: 1px dashed #e5e7eb;
+}
+
+.resume-card ul li span:first-child {
+  font-weight: 600;
+  color: #374151;
+}
+
+.resume-card ul li span:last-child {
+  color: #6b7280;
+  max-width: 60%;
+  text-align: right;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+    margin: 2rem 1rem;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  #search-container {
+    flex-direction: column;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  .resume-card ul li {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .resume-card ul li span:last-child {
+    text-align: left;
+  }
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume Parser</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  
+</head>
+<body>
+  <div class="container">
+    <h1>Resume Parser</h1>
+    <form id="upload-form" enctype="multipart/form-data"> 
+      <label for="resume">Upload Resume(s) (PDF or DOCX):</label>
+      <input type="file" id="resume" name="resumes" accept=".pdf,.doc,.docx" multiple required>
+      <button type="submit">Upload & Parse</button>
+    </form>
+    <div id="search-container">
+      <input type="text" id="skill-search" placeholder="Search by skill...">
+      <button id="search-btn" type="button">Search</button>
+    </div>
+    <h2 style="text-align: center;">Extracted Information</h2>
+    <div id="sort-controls">
+      <button id="sort-btn" type="button">Sort by ATS Score (High to Low)</button>
+    </div>
+    <div id="result" class="result-card hidden">
+      <div id="parsed-data"></div>
+    </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body> 
+</html>
